@@ -78,7 +78,7 @@ module Rack
           end
 
           headers['Set-Cookie'] = cookies.map { |cookie|
-            if cookie !~ /; secure(;|$)/ and cookie !~ /_insecure_/
+            if cookie !~ /; secure(;|$)/ and cookie !~ /_insecure_/ and cookie !~ /fastpass/
               "#{cookie}; secure"
             else
               cookie
